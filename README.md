@@ -1,7 +1,7 @@
 # BitNixelet Shader Pack
 
-## ⚠️ ALPHA VERSION ⚠️
-**Hey! This shader is still in development, so there might be bugs and weird stuff. If something breaks - don't panic, that's normal for alpha :)**
+## ⚠️ BETA VERSION ⚠️
+**Hey! This shader is still in development, so there might be bugs and weird stuff. If something breaks - don't panic, that's normal for beta :)**
 
 ## What is this?
 
@@ -26,12 +26,21 @@ Basically, I'm making a shader that turns Minecraft into an old-school pixel gam
 - Makes colors 20% brighter
 - Generally tries to make it look good
 
+### 📺 TV Noise (optional)
+- Adds old CRT TV static noise effect
+- Animated grain that moves over time
+- Can be turned on/off in shader settings
+- Makes it feel like playing on an old television
+
 ## How to configure
 
-### Main setting
+### Main settings
 - `PIXELATION` - how much to pixelate (1-100)
-  - 1 = everything in huge squares
-  - 100 = almost like normal, but still a bit pixelated
+  - 1 = almost no pixelation (very fine)
+  - 100 = strong pixelation (big squares)
+- `NOISE` - TV static effect (0/1)
+  - 0 = no noise
+  - 1 = old TV static noise
 
 ### How it works inside
 1. Takes the picture and "rounds" pixels into blocks
@@ -57,6 +66,17 @@ Basically, I'm making a shader that turns Minecraft into an old-school pixel gam
 - Sometimes artifacts appear if you pixelate too much
 - Some blocks might look weird
 - Interface gets blurry with strong pixelation (don't know how to fix this yet)
+
+## Fixed bugs
+
+- Fixed wrong pixelation math that caused weird scaling
+- Fixed edge artifacts by preventing texture sampling outside bounds
+- Fixed pixel centering for cleaner pixelation blocks
+- Fixed potential crashes from division by zero in color calculations
+- Fixed color overflow issues with proper clamping
+- Fixed inverted pixelation logic (now higher values = more pixelation)
+- Fixed NOISE setting not working properly with true/false values
+- Optimized luminance calculations for better performance
 
 ---
 
